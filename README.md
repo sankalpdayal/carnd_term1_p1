@@ -11,16 +11,16 @@
 
 [//]: # (Link References)
 
-[link1]: https://github.com/udacity/CarND-LaneLines-P1
-[link2]: https://en.wikipedia.org/wiki/Least_squares#Weighted_least_squares
-[link3]: https://medium.com/@esmat.anis/robust-extrapolation-of-lines-in-video-using-linear-hough-transform-edd39d642ddf
-[link4]: https://medium.com/towards-data-science/finding-lane-lines-on-the-road-30cf016a1165
+[git repo]: https://github.com/udacity/CarND-LaneLines-P1
+[wiki link]: https://en.wikipedia.org/wiki/Least_squares#Weighted_least_squares
+[prob hough transform]: https://medium.com/@esmat.anis/robust-extrapolation-of-lines-in-video-using-linear-hough-transform-edd39d642ddf
+[color transformation]: https://medium.com/towards-data-science/finding-lane-lines-on-the-road-30cf016a1165
 
 This project is first project in term1 of the Self Driving Car Nano Degree. The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on the work in a written report
 
-The starter code for this project was taken from here [link1] 
+The starter code for this project was taken from here [git repo] 
 
 This project contains following folders and files
 
@@ -52,21 +52,26 @@ My pipeline consisted of 6 steps.
 	
 	1. Depending on the slope of the lines, two lists of lines are created corresponding to left and right lanes. In this list x1,y1,x2,y2 are stored.
 	
-	2. For each lane, a line is fitted passing through the points in the list. This fitting is done using weighted least squares method [link2]  
+	2. For each lane, a line is fitted passing through the points in the list. This fitting is done using weighted least squares method [wiki link]  
 	
 	3. The weights are defined using the length of line. This is done in order to trust lines that are longer in length.
 	
 Following images demonstrate how the pipeline works
 
-1. Conversion to grayscale  ![alt text][image1]
+1. Conversion to grayscale  
+![alt text][image1]
 
-2. Gaussian smoothening ![alt text][image2]
+2. Gaussian smoothening 
+![alt text][image2]
 
-3. Masked canny edge detection ![alt text][image3]
+3. Masked canny edge detection 
+![alt text][image3]
 
-4. Lines from hough transform ![alt text][image4]
+4. Lines from hough transform 
+![alt text][image4]
 
-5. Left and right lanes after weighted least squares fitting ![alt text][image5]
+5. Left and right lanes after weighted least squares fitting 
+![alt text][image5]
 
 
 ### 2. Potential shortcomings with the current pipeline
@@ -79,6 +84,6 @@ Another potential issue is the lanes are assumed within a polygon of image, this
 
 ### 3. Some possible improvements to the pipeline
 
-A possible improvement would be to apply more probabilisitc prediction of lanes using the method as described by Esmat Nabil [link3].
+A possible improvement would be to apply more probabilisitc prediction of lanes using the method as described by Esmat Nabil [prob hough transform].
 
-Another improvement could be using better color based lane extraction as done by Naoki Shibuya [link4]
+Another improvement could be using better color based lane extraction as done by Naoki Shibuya [color transformation]
